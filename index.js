@@ -30,6 +30,11 @@ const displayCars = (cars) => {
 
     carContainer.innerHTML = '';
 
+    if(cars.length === 0){
+        carContainer.innerHTML = "<p>No data found</p>"
+        return;
+    }
+
     // Loops through each car object in the cars array
     cars.forEach((car) => {
         // Creating a new div element for each car card
@@ -74,6 +79,17 @@ const filterCarsByName = (name) => {
 
     displayCars(filteredCars)
 }
+
+const searchCars = (query) => {
+    const searchedCars = allCars.filter((car) =>
+        car.name.toLowerCase().includes(query.toLowerCase()) ||
+        car.model.toLowerCase().includes(query.toLowerCase())
+    )
+    displayCars(searchedCars)
+}
+document.getElementById('searchInput').addEventListener('input', (event) => {
+    searchCars(event.target.value) //Filter cars on input change
+});
 
 // Fetch and display all car data when page loads
 window.onload = fetchCarData

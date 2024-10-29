@@ -18,7 +18,7 @@ const fetchCarData = async () => {
 
     // This handles any error that occurs during fetch process
     }catch(error){
-        // Log the error message to the console
+        // Log the error message to the console 
         console.error('Error fetch car data', error)
     }
     
@@ -48,9 +48,15 @@ const displayCars = (cars) => {
         <h2>${car.name}</h2>
         <p>Model: ${car.model}</p>
         `
+
+        // add Click event to store car data in a localStorage and navigate to details page
+        carCard.addEventListener('click', () => {
+            localStorage.setItem('selectedCar', JSON.stringify(car));
+            window.location.href = 'car-detail.html'
+        });
         // Appending the car Card to the car container on the webpage
         carContainer.appendChild(carCard)
-    })
+    });
 }
 
 // Define a function to Dynamically create filter buttons
@@ -93,3 +99,4 @@ document.getElementById('searchInput').addEventListener('input', (event) => {
 
 // Fetch and display all car data when page loads
 window.onload = fetchCarData
+

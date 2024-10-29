@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Car Details</h1>
+    <div class="container">
+        <div class="details-container">
+            <div class="car-details" id="carDetails"></div>
+            <button class="back-button">Back to Gallery</button>
+        </div>
+    </div>
+
+
+    <script src="car-detail.js"></script>
+    <script>
+        if(!localStorage.getItem('authenticatedUser')){
+            window.location.href = 'login.html'
+        }
+    </script>
+</body>
+</html>

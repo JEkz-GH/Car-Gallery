@@ -58,3 +58,31 @@ h1{
     height: auto;
     margin-bottom: 10px;
 }
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.details-container .car-image{
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.car-info{
+    text-align: center;
+    margin-top: 20px;
+}
+.car-info h1{
+    margin: 10px 0;
+    font-size: 32px;
+    color: #333;
+}
+.car-info h3{
+    margin: 5px 0;
+    color: #555;
+    font-weight: normal;
+}
